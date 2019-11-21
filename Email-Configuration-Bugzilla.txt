@@ -1,0 +1,57 @@
+My Mail ID   karthik.mn@xyramsoft.com
+Password     password123
+SMTP Server  smtpout.secureserver.net
+Port         80, 3535, 25, 465 (SSL)
+
+===========================================================================================
+
+C:\bugzilla\data\params.json
+----------------------------------
+
+"mailfrom" : "karthik.mn@xyramsoft.com",
+"maintainer" : "karthik.mn@xyramsoft.com",
+
+"smtpserver" : "smtpout.secureserver.net",
+"smtp_password" : "Xyram2019!!",
+
+=============================================================================================
+
+
+C:\xampp\php\php.ini
+---------------------
+
+Here search for     [mail function]
+
+Comment below lines with ;
+SMTP=localhost
+smtp_port=25
+
+ANd add below lines
+-------------------
+SMTP=smtpout.secureserver.net
+smtp_port=25
+sendmail_from=karthik.mn@xyramsoft.com
+sendmail_path= "\"C:\xampp\sendmail\sendmail.exe" -t"
+
+=======================================================================================================
+
+Create folder 
+C:\usr\lib
+
+Copy and Paste Sendmail.exe from C:\xampp\sendmail\sendmail.exe    to    C:\usr\lib
+Copy and Paste Sendmail.exe from C:\xampp\sendmail\sendmail.ini    to    C:\usr\lib
+
+========================================================================================================
+
+C:\xampp\sendmail\sendmail.ini
+-------------------------------
+
+smtp_server=smtpout.secureserver.net
+smtp_ssl=none
+auth_username=karthik.mn@xyramsoft.com
+auth_password=Xyram2019!!
+force_sender=karthik.mn@xyramsoft.com
+
+
+=====================================================================================================
+
